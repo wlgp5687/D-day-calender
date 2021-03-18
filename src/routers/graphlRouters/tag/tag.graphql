@@ -1,0 +1,12 @@
+type Query {
+	tagsByTag(tag: String!): getTagsByTag
+}
+
+type Mutation {
+	postTag(tag: String!): Tag
+}
+
+type getTagsByTag {
+	tag: [Tag]
+	exact_tag: Tag
+}

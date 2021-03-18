@@ -1,0 +1,4 @@
+type Query {
+	boards(board_type: BoardType!): [Board]
+	boardByBoardId(board_id: Int!): Board!
+}

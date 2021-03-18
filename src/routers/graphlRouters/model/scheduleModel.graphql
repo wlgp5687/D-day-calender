@@ -1,0 +1,51 @@
+type Schedule {
+	id: Int!
+	calendar_id: Int!
+	member_id: Int!
+	repeat: Repeat!
+	repeat_endtime: Date
+	division: Division!
+	is_deleted: Agreement!
+	created_at: Date!
+	updated_at: Date!
+	schedule_loop: [ScheduleLoop]
+	alarm: Alarm
+}
+
+type ScheduleLoop {
+	id: Int!
+	schedule_id: Int!
+	calendar_id: Int
+	title: String!
+	start_time: Date!
+	end_time: Date!
+	color_id: Int!
+	color: Color!
+	memo: ScheduleLoopMemo
+	tag: [Tag]
+	alarm: Alarm!
+	is_deleted: Agreement!
+	calendar_title: String
+	repeat: Repeat
+	repeat_endtime: Date
+	created_at: Date!
+	updated_at: Date!
+}
+
+type ScheduleLoopMemo {
+	schedule_loop_id: Int!
+	memo: String!
+}
+
+type ScheduleLoopTag {
+	schedule_loop_id: Int!
+	tag_id: Int!
+}
+
+type Alarm {
+	id: Int!
+	schedule_loop_id: Int!
+	alarm: String!
+	alarm_at: Date
+	created_at: Date!
+}

@@ -1,0 +1,28 @@
+type Calendar {
+	id: Int!
+	title: String!
+	is_deleted: Agreement!
+	write_auth: CalendarPermission!
+	is_secret: Agreement!
+	calendar_member: CalendarMemberList!
+	created_at: Date!
+	updated_at: Date!
+}
+
+type MemberCalendar {
+	id: Int!
+	member_id: Int!
+	calendar_id: Int!
+	calendar: Calendar
+	member: Member
+	is_master: Agreement!
+	is_display: Agreement!
+	status: CalendarShareStatus!
+	created_at: Date!
+	updated_at: Date!
+}
+
+type CalendarMemberList {
+	total: Int!
+	list: [MemberCalendar]
+}

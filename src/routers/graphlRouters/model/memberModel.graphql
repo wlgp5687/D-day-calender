@@ -1,0 +1,43 @@
+type Member {
+	id: Int!
+	user_id: String!
+	nickname: String!
+	profile: String!
+	email: String!
+	join_site: String!
+	member_external: MemberExternal
+	member_setting: MemberSetting!
+	member_tag: [Tag]
+	member_calendar(is_default: Agreement, is_secret: Agreement!): [MemberCalendar]
+	member_color: [MemberColor]
+	created_at: Date!
+	updated_at: Date!
+}
+
+type MemberExternal {
+	member_id: Int!
+	channel: JoinSite!
+	token: String!
+	created_at: Date!
+}
+
+type MemberSetting {
+	member_id: Int!
+	theme_id: Int!
+	version_id: Int!
+	start_display: StartDisplay!
+	start_day: StartDay!
+	holiday_display: Agreement!
+	tag_display: Agreement!
+	push_alarm: Agreement!
+	alarm: Agreement!
+}
+
+type MemberColor {
+	id: Int!
+	member_id: Int!
+	color_id: Int!
+	sort_no: Int!
+	count: Int!
+	color: Color!
+}

@@ -1,0 +1,26 @@
+type Query {
+	member: Member!
+	membersByEmail(email: String!): [Member!]
+	isExistMemberEmail(email: String!): Member!
+}
+
+type Mutation {
+	inviteCalendarMember(member_id: String!, calendar_id: Int): InviteCalendarMember
+	banCalendarMember(member_id: Int!, calendar_id: Int!): Boolean
+	patchMember(password: String, nickname: String): Boolean
+	patchMemberSetting(
+		version: String
+		theme_id: Int
+		start_day: StartDay
+		start_display: StartDisplay
+		holiday_display: Agreement
+		tag_display: Agreement
+		push_alarm: Agreement
+		alarm: Agreement
+	): Boolean
+	uploadProfile(file: Upload): Boolean
+}
+
+type InviteCalendarMember {
+	member_calendar: [MemberCalendar]
+}

@@ -1,0 +1,11 @@
+type Board {
+	id: Int!
+	member_id: Int!
+	member: Member!
+	board_type: BoardType!
+	title: String!
+	contents: String!
+	is_deleted: Agreement!
+	created_at: Date!
+	updated_at: Date!
+}

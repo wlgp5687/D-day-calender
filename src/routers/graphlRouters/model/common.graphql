@@ -1,0 +1,62 @@
+# enum
+enum Agreement {
+	Y
+	N
+}
+
+enum JoinSite {
+	GOOGLE
+	NAVER
+}
+
+enum CalendarPermission {
+	MASTER
+	EVERYONE
+}
+
+enum CalendarShareStatus {
+	REQUEST
+	JOIN
+}
+
+enum StartDisplay {
+	MONTH
+	WEEK
+}
+
+enum StartDay {
+	MON
+	TUE
+	WED
+	THU
+	FRI
+	SAT
+	SUN
+}
+
+enum BoardType {
+	NOTICE
+}
+
+enum Division {
+	WEB
+	APP
+}
+
+enum Repeat {
+	N
+	D
+	W
+	M
+	Y
+}
+
+enum DeleteType {
+	THIS
+	NEXT
+}
+
+#
+scalar Date
+
+scalar Upload

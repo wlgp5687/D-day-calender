@@ -1,0 +1,15 @@
+type Query {
+	calendar(calendar_id: Int!): Calendar!
+}
+
+type Mutation {
+	postCalendar(title: String!, write_auth: String!): postCalendar!
+	deleteCalendar(calendar_id: Int!, member_id: Int): Boolean
+	patchCalendar(calendar_id: Int!, title: String, write_auth: CalendarPermission, is_display: String): Boolean
+	joinCalendar(calendar_id: Int!): Boolean
+}
+
+type postCalendar {
+	calendar: Calendar!
+	member_calendar: MemberCalendar!
+}

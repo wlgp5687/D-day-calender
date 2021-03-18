@@ -1,0 +1,5 @@
+type Color {
+	id: Int!
+	color: String!
+	is_premium: Agreement!
+}

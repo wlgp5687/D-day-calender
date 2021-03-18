@@ -1,0 +1,45 @@
+type Mutation {
+	postSchedule(
+		calendar_id: Int!
+		title: String!
+		start_time: Date!
+		end_time: Date!
+		color_id: Int!
+		repeat: String!
+		repeat_endtime: String
+		division: String!
+		memo: String
+		alarm: String!
+		tags: String
+	): postSchedule!
+	patchSchedule(
+		schedule_loop_id: Int!
+		calendar_id: Int
+		patchtype: String!
+		title: String
+		start_time: Date
+		end_time: Date
+		color_id: Int
+		repeat: String
+		repeat_endtime: String
+		memo: String
+		alarm: String
+		tags: String
+	): Boolean
+	deleteScheduleLoop(calendar_id: Int!, schedule_loop_id: Int!, delete_type: DeleteType): Boolean
+}
+
+type postSchedule {
+	schedule: Schedule
+}
+
+type Query {
+	scheduleLoopById(schedule_loop_id: Int!): ScheduleLoop
+	scheduleLoopsByMemberId(start_time: String!, end_time: String!, is_display: Agreement!): [ScheduleLoop]
+	scheduleLoopsByTitleTag(search_word: String!): [GetScheduleLoopsByTitleTag]
+}
+
+type GetScheduleLoopsByTitleTag {
+	date: String
+	schedule_loop: [ScheduleLoop]
+}
